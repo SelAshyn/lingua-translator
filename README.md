@@ -25,6 +25,32 @@
 3. Enable "Developer mode" in the top right
 4. Click "Load unpacked" and select the project directory
 
+### Setup Backend API (Cloudflare Worker)
+
+The extension uses a Cloudflare Worker backend to proxy DeepL API requests securely.
+
+**Quick Setup:**
+```bash
+# 1. Go to the API folder
+cd selected-text-translator-api
+
+# 2. Login to Cloudflare
+wrangler login
+
+# 3. Deploy the worker
+wrangler deploy
+
+# 4. Add your DeepL API Key
+wrangler secret put DEEPL_API_KEY
+# Paste your key when prompted
+
+# 5. Update API URL in popup.js with your worker URL
+```
+
+**Full Setup Guide**: See `selected-text-translator-api/SETUP.md`
+
+**Get DeepL API Key**: https://www.deepl.com/pro-api (Free tier available)
+
 ### Usage
 1. **Select** any text on a webpage
 2. **Click** the Lingua icon in your toolbar
