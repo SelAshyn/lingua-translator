@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lingua - Instant Translation</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M3 12h18" />
+            <path d="M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z" />
+          </svg>
+        </span>
+        <h1 class="brand__name">Lingua</h1>
+      </div>
+
+      <div class="header__right">
+        <span id="status-chip" class="badge badge--status is-ready" role="status">
+          <span id="status-chip-label">Ready</span>
+        </span>
+        <button
+          id="theme-toggle"
+          class="btn btn--ghost btn--icon"
+          type="button"
+          aria-label="Toggle dark mode"
+          aria-pressed="false"
+          title="Switch to dark mode"
+        >
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Scrolling body -->
+    <main class="body">
+
+      <!-- Language bar -->
+      <div class="lang-bar">
+        <span id="source-lang" class="lang-bar__source" title="Source language is detected automatically">Auto-detect</span>
+        <svg class="lang-bar__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M13 6l6 6-6 6" />
+        </svg>
+        <div class="select">
+          <label for="language" class="visually-hidden">Translate into</label>
+          <select id="language" class="select__control">
+            <option value="EN">🇺🇸 English</option>
+            <option value="NE">🇳🇵 Nepali</option>
+            <option value="HI">🇮🇳 Hindi</option>
+            <option value="ZH">🇨🇳 Chinese (Simplified)</option>
+            <option value="JA">🇯🇵 Japanese</option>
+            <option value="KO">🇰🇷 Korean</option>
+            <option value="FR">🇫🇷 French</option>
+            <option value="DE">🇩🇪 German</option>
+            <option value="ES">🇪🇸 Spanish</option>
+            <option value="AR">🇸🇦 Arabic</option>
+          </select>
+          <svg class="select__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Input card -->
+      <section class="card card--input">
+        <label for="original" class="card__label">Text to translate</label>
+        <textarea
+          id="original"
+          class="field"
+          placeholder="Select text on any page, or type here."
+          rows="4"
+          spellcheck="true"
+          dir="auto"
+        ></textarea>
+        <div class="card__meta">
+          <span id="char-count">0 characters</span>
+          <button id="clear" class="btn btn--ghost btn--sm" type="button" hidden>Clear</button>
+        </div>
+      </section>
+
+      <!-- Output card -->
+      <section class="card card--output">
+        <div class="card__label">Translation</div>
+        <div
+          id="result"
+          class="result is-empty"
+          dir="auto"
+          role="status"
+          aria-live="polite"
+          aria-label="Translation result"
+        >Translation appears here.</div>
+      </section>
+    </main>
+
+    <!-- Pinned action bar -->
+    <footer class="actions">
+      <button id="translate" class="btn btn--primary" type="button" title="Translate (Ctrl/Cmd + Enter)">
+        <span class="btn__spinner" aria-hidden="true"></span>
+        <span class="btn__label">Translate</span>
+        <kbd id="kbd-hint" class="btn__kbd" aria-hidden="true">Ctrl ↵</kbd>
+      </button>
+      <button id="copy" class="btn btn--secondary" type="button" disabled title="Copy translation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="9" y="9" width="11" height="11" rx="2" />
+          <path d="M5 15V6a2 2 0 0 1 2-2h9" />
+        </svg>
+        <span class="btn__label">Copy</span>
+      </button>
+    </footer>
+
+    <!-- Toast (was the inline #status line) -->
+    <div id="status" class="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

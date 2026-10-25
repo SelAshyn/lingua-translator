@@ -1,0 +1,31 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="48" height="48" rx="10" fill="url(#grad)"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="48" y2="48">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Outer circle -->
+  <circle cx="24" cy="24" r="18" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  <!-- Globe base -->
+  <circle cx="24" cy="24" r="13.5" fill="none" stroke="white" stroke-width="2.5"/>
+  <!-- Horizontal line -->
+  <path d="M13.5 24h21" stroke="white" stroke-width="2" opacity="0.6"/>
+  <!-- Vertical line -->
+  <path d="M24 13.5v21" stroke="white" stroke-width="2" opacity="0.6"/>
+  <!-- Curved lines for landmass -->
+  <path d="M18 20 Q 24 16 28 20" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <!-- Speech bubble 1 (top right) -->
+  <g>
+    <rect x="28" y="13" width="8" height="6" rx="1.5" fill="rgba(255,255,255,0.9)"/>
+    <path d="M 31 19 L 29 21.5 L 31 21" fill="rgba(255,255,255,0.9)"/>
+    <circle cx="30.5" cy="15.5" r="0.8" fill="#3b82f6" opacity="0.6"/>
+  </g>
+  <!-- Speech bubble 2 (bottom left) -->
+  <g>
+    <rect x="12" y="28" width="8" height="6" rx="1.5" fill="rgba(255,255,255,0.75)"/>
+    <path d="M 15 34 L 13 36.5 L 15 36" fill="rgba(255,255,255,0.75)"/>
+    <circle cx="14.5" cy="30.5" r="0.8" fill="#3b82f6" opacity="0.5"/>
+  </g>
+</svg>

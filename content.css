@@ -1,0 +1,73 @@
+/* content.css
+ * Styles for the floating "Translate" button that appears above a
+ * text selection on the page.
+ */
+
+#select-translator-fab {
+  position: fixed;
+  z-index: 2147483647;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px 7px 12px;
+  background: #172033;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font: 600 13px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.35), 0 1px 2px rgba(15, 23, 42, 0.2);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+}
+
+#select-translator-fab:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+}
+
+#select-translator-fab:active {
+  transform: translateY(0) scale(0.98);
+}
+
+#select-translator-fab .fab-icon {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+/* A little pointer that anchors the button to the selection below it. */
+#select-translator-fab:not(.is-below)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 6px;
+  transform: translateX(-50%);
+  background: #172033;
+  clip-path: polygon(0 0, 100% 0, 50% 6px);
+}
+
+#select-translator-fab.is-below::after {
+  top: -6px;
+  bottom: auto;
+  clip-path: polygon(50% 6px, 0 0, 100% 0);
+}
+
+/* Match the floating button to the popup's dark theme when enabled. */
+html[data-theme="dark"] #select-translator-fab {
+  background: #0b1220;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme="dark"] #select-translator-fab:hover {
+  background: #020617;
+}
+
+html[data-theme="dark"] #select-translator-fab:not(.is-below)::after,
+html[data-theme="dark"] #select-translator-fab.is-below::after {
+  background: #0b1220;
+}

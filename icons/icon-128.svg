@@ -1,0 +1,56 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="128" y2="128">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background with rounded corners -->
+  <rect width="128" height="128" rx="28" fill="url(#grad)" filter="url(#shadow)"/>
+  
+  <!-- Outer decorative circle -->
+  <circle cx="64" cy="64" r="48" fill="none" stroke="white" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Main globe -->
+  <circle cx="64" cy="64" r="38" fill="none" stroke="white" stroke-width="3"/>
+  
+  <!-- Longitude/Latitude lines -->
+  <path d="M 64 26 Q 74 40 80 64 Q 74 88 64 102" fill="none" stroke="white" stroke-width="2" opacity="0.5"/>
+  <path d="M 26 64 L 102 64" stroke="white" stroke-width="2.5" opacity="0.6"/>
+  <path d="M 30 52 Q 64 42 98 52" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <path d="M 32 76 Q 64 88 96 76" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  
+  <!-- Landmass suggestion -->
+  <path d="M 50 58 Q 60 50 72 56" fill="none" stroke="white" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Speech bubble 1 - Top right (incoming) -->
+  <g>
+    <rect x="78" y="28" width="28" height="18" rx="5" fill="white" opacity="0.95" filter="url(#shadow)"/>
+    <path d="M 88 46 L 82 56 L 88 54" fill="white" opacity="0.95"/>
+    <!-- Dots inside representing text -->
+    <circle cx="86" cy="34" r="1.5" fill="#3b82f6" opacity="0.7"/>
+    <circle cx="92" cy="34" r="1.5" fill="#3b82f6" opacity="0.7"/>
+    <circle cx="98" cy="34" r="1.5" fill="#3b82f6" opacity="0.7"/>
+    <line x1="86" y1="40" x2="102" y2="40" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+    <line x1="86" y1="44" x2="100" y2="44" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  
+  <!-- Speech bubble 2 - Bottom left (outgoing) -->
+  <g>
+    <rect x="22" y="78" width="28" height="18" rx="5" fill="rgba(255,255,255,0.85)" filter="url(#shadow)"/>
+    <path d="M 40 96 L 46 106 L 40 104" fill="rgba(255,255,255,0.85)"/>
+    <!-- Dots inside -->
+    <circle cx="30" cy="84" r="1.5" fill="#1e40af" opacity="0.6"/>
+    <circle cx="36" cy="84" r="1.5" fill="#1e40af" opacity="0.6"/>
+    <circle cx="42" cy="84" r="1.5" fill="#1e40af" opacity="0.6"/>
+    <line x1="30" y1="90" x2="46" y2="90" stroke="#1e40af" stroke-width="1.5" opacity="0.5"/>
+    <line x1="30" y1="94" x2="44" y2="94" stroke="#1e40af" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  
+  <!-- Connection line between bubbles -->
+  <path d="M 78 40 Q 70 55 50 85" stroke="white" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+</svg>
